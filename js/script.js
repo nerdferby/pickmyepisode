@@ -2,6 +2,8 @@ let pickEpisode = () => {
 
 	let pickedSeason = Math.trunc(Math.random() * 9) + 1;
 
+	// TODO add check to avoid same season being picked twice
+
 	let settings = {
 		"async": true,
 		"crossDomain": true,
@@ -21,11 +23,11 @@ let pickEpisode = () => {
 
 		console.log(response);
 
-		$(".episode__title").text(pickedEpisode.name)
+		$(".episode__title").text(pickedEpisode.name);
 		$(".episode__number").text("Season " + response.season_number + ", episode " + pickedEpisode.episode_number);
 		$(".episode__rating").text(pickedEpisode.vote_average);
 		$(".episode__description").text(pickedEpisode.overview);
-		$(".episode__air-date").text(pickedEpisode.air_date)
+		$(".episode__air-date").text(pickedEpisode.air_date);
 		$(".episode__thumbnail").attr("src", "https://image.tmdb.org/t/p/w300" + pickedEpisode.still_path);
 
 	});
@@ -35,3 +37,5 @@ let pickEpisode = () => {
 pickEpisode();
 
 $(".pick-again").on("click", pickEpisode);
+
+// TODO add auto-scroller to top of the page when button is clicked

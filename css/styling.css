@@ -53,7 +53,7 @@ main {
 	margin-right: 0.25em;
 	width: 1em;
 	height: 1em;
-	background: transparent url("images/favourites-filled-star-symbol--white.svg")
+	background: transparent url("../img/favourites-filled-star-symbol--white.svg")
 		top left / contain no-repeat;
 }
 
@@ -93,7 +93,7 @@ main {
 	float: left;
 	width: 1em;
 	height: 1em;
-	background: transparent url("images/dice.svg")
+	background: transparent url("../img/dice.svg")
 		top left / contain no-repeat;
 	position: absolute;
 	top: 50%;
