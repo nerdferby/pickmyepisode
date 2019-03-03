@@ -1,0 +1,111 @@
+body {
+	font-size: 16px;
+	font-family: "Open Sans", "Arial", sans-serif;
+	background-color: #202022;
+	color: #f8f8f8;
+	font-weight: 200;
+}
+
+body::before {
+	content: "";
+	display: block;
+	height: 0.3125em;
+	background-color: #db841b;
+}
+
+main {
+	max-width: 20em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2.5em 0;
+}
+
+.episode__thumbnail {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-bottom: 1.25em;
+}
+
+.episode__title {
+	font-size: 1.875em;
+	line-height: 1em;
+}
+
+.episode__number {
+	font-size: 1.125em;
+	line-height: 1.667em;
+	display: block;
+}
+
+.episode__rating {
+	background: #db841c;
+	font-weight: 600;
+	padding: 0.5em 0.75em;
+	display: inline-block;
+	margin-top: 0.5em;
+	border-radius: 1em;
+}
+.episode__rating::before {
+	content: "";
+	display: inline-block;
+	float: left;
+	margin-right: 0.25em;
+	width: 1em;
+	height: 1em;
+	background: transparent url("images/favourites-filled-star-symbol--white.svg")
+		top left / contain no-repeat;
+}
+
+.episode__description {
+	margin-top: 0.75em;
+	font-size: 1.125em;
+	line-height: 1.66667em;
+}
+
+.episode__air-date {
+	margin-top: 1em;
+	display: block;
+	color: #a7a7a7;
+}
+
+.pick-again {
+	display: block;
+	background: #db841c;
+	border: 0.2778em solid #e0a762;
+	border-radius: 1em;
+	color: #f7f7f7;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: "Open Sans", "Arial", sans-serif;
+	font-size: 1.375em;
+	padding: 0.25em 1em;
+	padding-left: 2.25em;
+	letter-spacing: 0.0625rem;
+	position: relative;
+	margin: 1em auto 0;
+	cursor: pointer;
+	box-shadow: 0.16666667em 0.16666667em 0.2778em rgba(0,0,0,0.33);
+}
+.pick-again::before {
+	content: "";
+	display: inline-block;
+	float: left;
+	width: 1em;
+	height: 1em;
+	background: transparent url("images/dice.svg")
+		top left / contain no-repeat;
+	position: absolute;
+	top: 50%;
+	left: 0.75em;
+	transform: translateY(-50%);
+}
+.pick-again:hover {
+	top: 3px;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+	border-color: #e4c095;
+}
+
+footer {
+	display: none;
+}
