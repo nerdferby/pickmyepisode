@@ -13,6 +13,25 @@ body::before {
 	background-color: #db841b;
 }
 
+.js .javascript-disabled {
+	display: none;
+}
+.javascript-disabled {
+	max-width: 20em;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-60%);
+}
+
+.no-js main {
+	display: none;
+}
+.js main {
+	display: block;
+}
+
 main {
 	max-width: 20em;
 	margin-left: auto;
@@ -27,7 +46,7 @@ main {
 	margin-bottom: 1.25em;
 }
 
-.episode__title {
+h1 {
 	font-size: 1.875em;
 	line-height: 1em;
 }

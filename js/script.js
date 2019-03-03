@@ -13,7 +13,7 @@ let pickEpisode = () => {
 		"data": "{}"
 	};
 
-	$.ajax(settings).done(function (response) {
+	$.ajax(settings).done(function(response) {
 
 		let rng = Math.trunc(Math.random() * response.episodes.length);
 
@@ -21,13 +21,24 @@ let pickEpisode = () => {
 
 		// console.log(pickedEpisode.name, pickedEpisode.overview, pickedSeason, rng+1)
 
-		console.log(response);
+		console.log(pickedEpisode);
 
 		$(".episode__title").text(pickedEpisode.name);
+
 		$(".episode__number").text("Season " + response.season_number + ", episode " + pickedEpisode.episode_number);
-		$(".episode__rating").text(pickedEpisode.vote_average);
+
+		if(pickedEpisode.vote_average === 0) {
+			$(".episode__rating").text("N/A");
+		}
+
+		else {
+			$(".episode__rating").text(Math.round(pickedEpisode.vote_average * 10) / 10);
+		}
+
 		$(".episode__description").text(pickedEpisode.overview);
+
 		$(".episode__air-date").text(pickedEpisode.air_date);
+
 		$(".episode__thumbnail").attr("src", "https://image.tmdb.org/t/p/w300" + pickedEpisode.still_path);
 
 	});
