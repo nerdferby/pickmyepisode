@@ -73,7 +73,7 @@ h1 {
 	width: 1em;
 	height: 1em;
 	background: transparent url("../img/favourites-filled-star-symbol--white.svg")
-		top left / contain no-repeat;
+	top left / contain no-repeat;
 }
 
 .episode__description {
@@ -113,7 +113,7 @@ h1 {
 	width: 1em;
 	height: 1em;
 	background: transparent url("../img/dice.svg")
-		top left / contain no-repeat;
+	top left / contain no-repeat;
 	position: absolute;
 	top: 50%;
 	left: 0.75em;
@@ -127,4 +127,142 @@ h1 {
 
 footer {
 	display: none;
+}
+
+@media only screen and (min-width: 40rem) {
+
+	main {
+		max-width: 34em;
+	}
+
+	.episode__header {
+		position: relative;
+	}
+
+	.episode__thumbnail {
+		display: inline-block;
+		margin: initial;
+	}
+
+	.episode__header .wrapper {
+		position: absolute;
+		left: 20em;
+		top: 50%;
+		transform: translateY(-50%);
+		display: block;
+	}
+
+	.episode__number {
+		margin-top: 0.5em;
+	}
+
+}
+
+@media only screen and (min-width: 43.75rem) {
+
+	main {
+		max-width: 40em
+	}
+
+}
+
+@media only screen and (min-width: 47.5rem) {
+
+	main {
+		max-width: 42em;
+		padding: 4em 0;
+	}
+
+	.episode__title {
+		font-size: 2.25em;
+	}
+
+	.episode__number {
+		font-size: 1.5em;
+	}
+
+	.episode__description {
+		margin-top: 1em;
+	}
+
+	.episode__rating {
+		margin-top: 1em;
+	}
+
+}
+
+@media only screen and (min-width: 80rem) {
+
+	main {
+		max-width: 60em;
+		padding: 6em 0;
+	}
+
+	.episode__title {
+		font-size: 3em;
+	}
+
+	.episode__header .wrapper {
+		left: 20.625em;
+	}
+
+	.episode__description {
+		max-width: 34.375em;
+		margin-top: 2em;
+	}
+
+	.episode__air-date {
+		margin-top: 1.5em;
+	}
+
+	.pick-again {
+		font-size: 1.75em;
+		position: fixed;
+		top: 450px;
+		right: 16%
+	}
+	.pick-again:hover {
+		top: 453px;
+	}
+
+}
+
+@media only screen and (min-width: 85.375em) {
+
+	main {
+		max-width: 70em;
+	}
+
+	.episode__description {
+		max-width: 800px;
+	}
+
+	.pick-again {
+		right: 10%;
+	}
+
+}
+
+@media only screen and (min-width: 60em) {
+
+	main {
+		padding: 8em 0;
+	}
+
+	.pick-again {
+		right: 14%;
+	}
+
+}
+
+@media only screen and (min-width: 120em) {
+
+	main {
+		padding: 10em 0;
+	}
+
+	.pick-again {
+		right: 20%
+	}
+
 }

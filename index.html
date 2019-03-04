@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
+
+	<script type="text/javascript">
+		document.querySelector("html").className = "js";
+	</script>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pick my episode</title>
@@ -53,11 +58,15 @@
 
 				<img src="img/thumbnail-placeholder.jpg" alt="" class="episode__thumbnail" />
 
-				<h1 class="episode__title"></h1>
+				<div class="wrapper">
 
-				<span class="episode__number"></span>
+					<h1 class="episode__title"></h1>
 
-				<span class="episode__rating"></span>
+					<span class="episode__number"></span>
+
+					<span class="episode__rating"></span>
+
+				</div>
 
 			</div>
 
@@ -88,7 +97,6 @@
 
 	</footer>
 
-	<script src="js/vendor/modernizr-3.6.0.min.js"></script>
 	<script src="js/script.js"></script>
 
 </body>
