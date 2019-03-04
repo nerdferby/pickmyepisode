@@ -25,6 +25,22 @@ body::before {
 	transform: translateX(-50%) translateY(-60%);
 }
 
+.site-name {
+	font-weight: 700;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin: 0 auto;
+	width: 280px;
+	text-align: center;
+}
+.site-name span {
+	color: #db841c;
+}
+.site-name span:last-of-type {
+	font-size: 1.5em;
+}
+
 .no-js main {
 	display: none;
 }
@@ -243,7 +259,12 @@ footer {
 
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 100em) {
+
+	.site-name {
+		font-size: 2em;
+		width: 25rem;
+	}
 
 	main {
 		padding: 8em 0;
