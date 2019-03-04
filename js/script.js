@@ -1,6 +1,17 @@
+let generateRandomNumber = (max, min) => {
+	return Math.trunc(Math.random() * max) + min;
+};
+
 let pickEpisode = () => {
 
-	let pickedSeason = Math.trunc(Math.random() * 9) + 1;
+	let pickedSeason = 0;
+
+	do {
+		pickedSeason = generateRandomNumber(9, 1);
+	}
+	while(lastSeasonPicked === pickedSeason);
+
+	lastSeasonPicked = pickedSeason;
 
 	// TODO add check to avoid same season being picked twice
 
@@ -15,11 +26,9 @@ let pickEpisode = () => {
 
 	$.ajax(settings).done(function(response) {
 
-		let rng = Math.trunc(Math.random() * response.episodes.length);
-
-		let pickedEpisode = response.episodes[rng];
-
-		// console.log(pickedEpisode.name, pickedEpisode.overview, pickedSeason, rng+1)
+		let pickedEpisode = response.episodes[
+			generateRandomNumber(response.episodes.length, 0)
+			];
 
 		console.log(pickedEpisode);
 
@@ -44,6 +53,8 @@ let pickEpisode = () => {
 	});
 
 };
+
+let lastSeasonPicked = 0;
 
 pickEpisode();
 
