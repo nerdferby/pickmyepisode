@@ -13,8 +13,6 @@ let pickEpisode = () => {
 
 	lastSeasonPicked = pickedSeason;
 
-	// TODO add check to avoid same season being picked twice
-
 	let settings = {
 		"async": true,
 		"crossDomain": true,
