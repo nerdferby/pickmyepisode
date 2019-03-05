@@ -4,6 +4,8 @@ body {
 	background-color: #202022;
 	color: #f8f8f8;
 	font-weight: 200;
+	position: relative;
+	padding-bottom: 2.5em;
 }
 
 body::before {
@@ -142,7 +144,17 @@ h1 {
 }
 
 footer {
-	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 1em 2.5em;
+	text-align: center;
+}
+
+footer p {
+	display: inline-block;
+	margin-top: 0.5em;
 }
 
 @media only screen and (min-width: 40rem) {
@@ -234,11 +246,11 @@ footer {
 	.pick-again {
 		font-size: 1.75em;
 		position: fixed;
-		top: 450px;
+		top: 16.0714em;
 		right: 16%
 	}
 	.pick-again:hover {
-		top: 453px;
+		top: 16.1786em;
 	}
 
 }
@@ -250,7 +262,7 @@ footer {
 	}
 
 	.episode__description {
-		max-width: 800px;
+		max-width: 50em;
 	}
 
 	.pick-again {
