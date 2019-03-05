@@ -1,7 +1,7 @@
 body {
 	font-size: 16px;
 	font-family: "Open Sans", "Arial", sans-serif;
-	background-color: #202022;
+	background-color: #1d1d24;
 	color: #f8f8f8;
 	font-weight: 200;
 	position: relative;
@@ -277,7 +277,7 @@ footer p {
 	}
 
 	.episode__description {
-		max-width: 50em;
+		max-width: 50rem;
 	}
 
 	.pick-again {
@@ -310,7 +310,7 @@ footer p {
 @media only screen and (min-width: 120em) {
 
 	main {
-		padding: 10em 0;
+		padding: 9em 0;
 	}
 
 	.pick-again {
