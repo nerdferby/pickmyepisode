@@ -27,6 +27,19 @@ body::before {
 	transform: translateX(-50%) translateY(-60%);
 }
 
+header::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 3.5em;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.63+0,0+100 */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.63) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.63) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.63) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
 .site-name {
 	font-weight: 700;
 	font-size: 1.5em;
@@ -35,6 +48,8 @@ body::before {
 	margin: 0 auto;
 	width: 280px;
 	text-align: center;
+	position: relative;
+	z-index: 2;
 }
 .site-name span {
 	color: #db841c;
@@ -272,6 +287,10 @@ footer p {
 }
 
 @media only screen and (min-width: 100em) {
+
+	header::before {
+		height: 4.125em;
+	}
 
 	.site-name {
 		font-size: 2em;
