@@ -15,6 +15,20 @@ body::before {
 	background-color: #db841b;
 }
 
+a, a:visited {
+	text-decoration: none;
+	color: #db841c;
+	border-bottom: 0.0625em solid #db841c;
+	font-weight: 400;
+}
+a:hover {
+	color: #e0a762;
+}
+a:active {
+	color: #1f89ec;
+	border-bottom-color: #1f89ec;
+}
+
 .js .javascript-disabled {
 	display: none;
 }
@@ -125,7 +139,7 @@ h1 {
 	display: block;
 	background: #db841c;
 	border: 0.2778em solid #e0a762;
-	border-radius: 1em;
+	border-radius: 1.25em; /* font size + padding */
 	color: #f7f7f7;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -174,7 +188,7 @@ footer p {
 
 @media only screen and (min-width: 40rem) {
 
-	main {
+	main, footer {
 		max-width: 34em;
 	}
 
@@ -199,11 +213,45 @@ footer p {
 		margin-top: 0.5em;
 	}
 
+	footer {
+		margin-bottom: -2em;
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 0 1em;
+	}
+
+	.footer-nav {
+		float: left;
+	}
+
+	.footer-nav a {
+		margin: 0 0.25em;
+	}
+
+	.footer-note {
+		float: right;
+		color: #a7a7a7;
+	}
+
+	.footer-note p {
+		margin-top: 0;
+	}
+
 }
 
 @media only screen and (min-width: 43.75rem) {
 
-	main {
+	header::before {
+		height: 4.125em;
+	}
+
+	.site-name {
+		font-size: 2em;
+		width: 25rem;
+	}
+
+	main, footer {
 		max-width: 40em
 	}
 
@@ -211,8 +259,11 @@ footer p {
 
 @media only screen and (min-width: 47.5rem) {
 
-	main {
+	main, footer {
 		max-width: 42em;
+	}
+
+	main {
 		padding: 4em 0;
 	}
 
@@ -236,8 +287,11 @@ footer p {
 
 @media only screen and (min-width: 80rem) {
 
-	main {
+	main, footer {
 		max-width: 60em;
+	}
+
+	main {
 		padding: 6em 0;
 	}
 
@@ -272,7 +326,7 @@ footer p {
 
 @media only screen and (min-width: 85.375em) {
 
-	main {
+	main, footer {
 		max-width: 70em;
 	}
 
@@ -287,15 +341,6 @@ footer p {
 }
 
 @media only screen and (min-width: 100em) {
-
-	header::before {
-		height: 4.125em;
-	}
-
-	.site-name {
-		font-size: 2em;
-		width: 25rem;
-	}
 
 	main {
 		padding: 8em 0;
