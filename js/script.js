@@ -44,7 +44,12 @@ let pickEpisode = () => {
 
 		$(".episode__description").text(pickedEpisode.overview);
 
-		$(".episode__air-date").text(pickedEpisode.air_date);
+		// $(".episode__air-date").text(pickedEpisode.air_date);
+
+		let airDate = new Date(pickedEpisode.air_date);
+		let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+		$(".episode__air-date").text(airDate.getDate() + " " + months[airDate.getMonth()] + ", " + airDate.getFullYear());
 
 		$(".episode__thumbnail").attr("src", "https://image.tmdb.org/t/p/w300" + pickedEpisode.still_path);
 
