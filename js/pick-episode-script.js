@@ -4,6 +4,9 @@ let generateRandomNumber = (max, min) => {
 
 let pickEpisode = () => {
 
+	$(".episode__description").removeClass("collapsed");
+	$(".episode__expander").removeClass("visible");
+
 	let pickedSeason = 0;
 
 	do {
@@ -44,6 +47,16 @@ let pickEpisode = () => {
 
 		$(".episode__description").text(pickedEpisode.overview);
 
+		if($(".episode__description").height() > 120) {
+			$(".episode__description").addClass("collapsed");
+			$(".episode__expander").addClass("visible");
+		}
+
+		else {
+			$(".episode__description").removeClass("collapsed");
+			$(".episode__expander").removeClass("visible");
+		}
+
 		// $(".episode__air-date").text(pickedEpisode.air_date);
 
 		let airDate = new Date(pickedEpisode.air_date);
@@ -62,5 +75,20 @@ let lastSeasonPicked = 0;
 pickEpisode();
 
 $(".pick-again").on("click", pickEpisode);
+
+$(".episode__expander").on("click", e => {
+
+	let desc = $(".episode__description");
+
+	if(desc.hasClass("collapsed")) {
+		desc.removeClass("collapsed");
+		desc.addClass("expanded");
+	}
+	else if(desc.hasClass("expanded")) {
+		desc.removeClass("expanded");
+		desc.addClass("collapsed");
+	}
+
+});
 
 // TODO add auto-scroller to top of the page when button is clicked
