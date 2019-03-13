@@ -126,7 +126,22 @@ h1 {
 .episode__description {
 	margin-top: 0.75em;
 	font-size: 1.125em;
-	line-height: 1.66667em;
+	line-height: 1.667em;
+}
+
+.episode__description.collapsed {
+	max-height: 6.6667em;
+	overflow-y: hidden;
+}
+
+.episode__expander {
+	display: none;
+	border-bottom-width: 0;
+}
+
+.episode__expander.visible {
+	display: inline-block;
+	margin-top: 0.25em;
 }
 
 .episode__air-date {

@@ -2,8 +2,50 @@ let generateRandomNumber = (max, min) => {
 	return Math.trunc(Math.random() * max) + min;
 };
 
+let toggleDescription = override => {
+
+	let desc = $(".episode__description");
+	let expander = $(".episode__expander");
+
+	let toggleTo = "collapsed"; // the action that will be applied to the description
+
+	if(override === "collapsed" || override === "expanded") { // allow the user to forcefully change the toggle
+		toggleTo = override;
+	}
+	else { // if no override set, which should be normal
+
+		if(desc.hasClass("expanded")) {
+			toggleTo = "collapsed";
+		}
+		else if(desc.hasClass("collapsed")) {
+			toggleTo = "expanded";
+		}
+
+	}
+
+	if(toggleTo === "collapsed") {
+		desc.removeClass("expanded");
+		desc.addClass("collapsed");
+		expander.text("Read more");
+	}
+	else if(toggleTo === "expanded") {
+		desc.removeClass("collapsed");
+		desc.addClass("expanded");
+		expander.text("Read less");
+	}
+
+	console.log(toggleTo, override);
+
+};
+
 let pickEpisode = () => {
 
+	// $(".episode__description").removeClass("collapsed");
+	// toggleDescription("expanded");
+	// $(".episode__expander").removeClass("visible");
+
+
+	// do while loop intended to prevent picking consecutive episodes from the same season
 	let pickedSeason = 0;
 
 	do {
@@ -44,6 +86,16 @@ let pickEpisode = () => {
 
 		$(".episode__description").text(pickedEpisode.overview);
 
+		if($(".episode__description").height() > 120) {
+			toggleDescription("collapsed");
+			$(".episode__expander").addClass("visible");
+		}
+
+		else {
+			toggleDescription("expanded");
+			$(".episode__expander").removeClass("visible");
+		}
+
 		// $(".episode__air-date").text(pickedEpisode.air_date);
 
 		let airDate = new Date(pickedEpisode.air_date);
@@ -52,6 +104,8 @@ let pickEpisode = () => {
 		$(".episode__air-date").text(airDate.getDate() + " " + months[airDate.getMonth()] + ", " + airDate.getFullYear());
 
 		$(".episode__thumbnail").attr("src", "https://image.tmdb.org/t/p/w300" + pickedEpisode.still_path);
+
+		$(document).scrollTop(0); // scroll to top of page only after data has been received and inputted
 
 	});
 
@@ -62,5 +116,7 @@ let lastSeasonPicked = 0;
 pickEpisode();
 
 $(".pick-again").on("click", pickEpisode);
+
+$(".episode__expander").on("click", toggleDescription);
 
 // TODO add auto-scroller to top of the page when button is clicked
