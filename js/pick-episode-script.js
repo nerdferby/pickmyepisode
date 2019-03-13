@@ -66,6 +66,8 @@ let pickEpisode = () => {
 
 		$(".episode__thumbnail").attr("src", "https://image.tmdb.org/t/p/w300" + pickedEpisode.still_path);
 
+		$(document).scrollTop(0); // scroll to top of page only after data has been received and inputted
+
 	});
 
 };
