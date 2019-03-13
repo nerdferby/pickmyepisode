@@ -2,9 +2,41 @@ let generateRandomNumber = (max, min) => {
 	return Math.trunc(Math.random() * max) + min;
 };
 
+let toggleDescription = override => {
+
+	let desc = $(".episode__description");
+
+	let toggleTo = "collapsed"; // the action that will be applied to the description
+
+	if(override) { // allow the user to forcefully change the toggle
+		toggleTo = override;
+	}
+	else { // if no override set, which should be normal
+
+		if(desc.hasClass("expanded")) {
+			toggleTo = "collapsed";
+		}
+		else if(desc.hasClass("collapsed")) {
+			toggleTo = "expanded";
+		}
+
+	}
+
+	if(toggleTo === "collapsed") {
+		desc.removeClass("expanded");
+		desc.addClass("collapsed");
+	}
+	else if(toggleTo === "expanded") {
+		desc.removeClass("collapsed");
+		desc.addClass("expanded");
+	}
+
+};
+
 let pickEpisode = () => {
 
-	$(".episode__description").removeClass("collapsed");
+	// $(".episode__description").removeClass("collapsed");
+	toggleDescription("expanded");
 	$(".episode__expander").removeClass("visible");
 
 	let pickedSeason = 0;
@@ -47,15 +79,7 @@ let pickEpisode = () => {
 
 		$(".episode__description").text(pickedEpisode.overview);
 
-		if($(".episode__description").height() > 120) {
-			$(".episode__description").addClass("collapsed");
-			$(".episode__expander").addClass("visible");
-		}
 
-		else {
-			$(".episode__description").removeClass("collapsed");
-			$(".episode__expander").removeClass("visible");
-		}
 
 		// $(".episode__air-date").text(pickedEpisode.air_date);
 
@@ -78,19 +102,6 @@ pickEpisode();
 
 $(".pick-again").on("click", pickEpisode);
 
-$(".episode__expander").on("click", e => {
-
-	let desc = $(".episode__description");
-
-	if(desc.hasClass("collapsed")) {
-		desc.removeClass("collapsed");
-		desc.addClass("expanded");
-	}
-	else if(desc.hasClass("expanded")) {
-		desc.removeClass("expanded");
-		desc.addClass("collapsed");
-	}
-
-});
+$(".episode__expander").on("click", toggleDescription());
 
 // TODO add auto-scroller to top of the page when button is clicked
