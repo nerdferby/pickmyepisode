@@ -15,7 +15,8 @@ body::before {
 	background-color: #db841b;
 }
 
-a, a:visited {
+a,
+a:visited {
 	text-decoration: none;
 	color: #db841c;
 	border-bottom: 0.0625em solid #db841c;
