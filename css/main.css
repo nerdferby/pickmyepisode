@@ -1,0 +1,312 @@
+body {
+  font-size: 16px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  background-color: #1d1d24;
+  color: #f7f7f7;
+  font-weight: 200;
+  position: relative;
+  padding-bottom: 2.5em;
+}
+body::before {
+  content: "";
+  display: block;
+  height: 0.3125em;
+  background-color: #db841c;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: #db841c;
+  border-bottom: 0.0625em solid #db841c;
+  font-weight: 400;
+}
+a:hover {
+  color: #e0a762;
+}
+a:active {
+  color: #1f89ec;
+  border-bottom-color: #1f89ec;
+}
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3.5em;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.63+0,0+100 */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a1000000', endColorstr='#00000000', GradientType=0);
+  /* IE6-9 */
+}
+.site-name {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.0625em;
+  margin: 0 auto;
+  width: 17.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.site-name span {
+  color: #db841c;
+}
+.site-name span:last-of-type {
+  font-size: 1.5em;
+}
+main {
+  max-width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.5em 0;
+}
+.episode__thumbnail {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 1.25em;
+}
+h1 {
+  font-size: 1.875em;
+  line-height: 1em;
+}
+.episode__number {
+  font-size: 1.125em;
+  line-height: 1.667em;
+  display: block;
+}
+.episode__rating {
+  background: #db841c;
+  font-weight: 600;
+  padding: 0.5em 0.75em;
+  display: inline-block;
+  margin-top: 0.5em;
+  border-radius: 1em;
+}
+.episode__rating::before {
+  content: "";
+  display: inline-block;
+  float: left;
+  margin-right: 0.25em;
+  width: 1em;
+  height: 1em;
+  background: transparent url("../img/favourites-filled-star-symbol--white.svg") top left / contain no-repeat;
+}
+.episode__description {
+  margin-top: 0.75em;
+  font-size: 1.125em;
+  line-height: 1.667em;
+}
+.episode__description.collapsed {
+  max-height: 6.6667em;
+  overflow-y: hidden;
+}
+.episode__expander {
+  display: none;
+  border-bottom-width: 0;
+}
+.episode__expander.visible {
+  display: inline-block;
+  margin-top: 0.25em;
+}
+.episode__air-date {
+  margin-top: 1em;
+  display: block;
+  color: #a7a7a7;
+}
+.no-js .pick-again {
+  display: none;
+}
+.js .pick-again {
+  display: block;
+}
+.pick-again {
+  background: #db841c;
+  border: 0.2778em solid #e0a762;
+  border-radius: 1.25em;
+  /* font size + padding */
+  color: #f7f7f7;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 1.375em;
+  padding: 0.25em 1em;
+  padding-left: 2.25em;
+  letter-spacing: 0.0625rem;
+  position: relative;
+  margin: 1em auto 0;
+  cursor: pointer;
+  box-shadow: 0.16666667em 0.16666667em 0.2778em rgba(0, 0, 0, 0.33);
+}
+.pick-again::before {
+  content: "";
+  display: inline-block;
+  float: left;
+  width: 1em;
+  height: 1em;
+  background: transparent url("../img/dice.svg") top left / contain no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 0.75em;
+  transform: translateY(-50%);
+}
+.pick-again:hover {
+  top: 3px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  border-color: #e8bf8d;
+}
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em 2.5em;
+  text-align: center;
+}
+footer p {
+  display: inline-block;
+  margin-top: 0.5em;
+}
+@media only screen and (min-width: 40rem) {
+  main,
+  footer {
+    max-width: 34em;
+  }
+  .episode__header {
+    position: relative;
+  }
+  .episode__thumbnail {
+    display: inline-block;
+    margin: initial;
+  }
+  .episode__header .wrapper {
+    position: absolute;
+    left: 20em;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+  }
+  .episode__number {
+    margin-top: 0.5em;
+  }
+  footer {
+    margin-bottom: -2em;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 1em;
+  }
+  .footer-nav {
+    float: left;
+  }
+  .footer-nav a {
+    margin: 0 0.25em;
+  }
+  .footer-note {
+    float: right;
+    color: #a7a7a7;
+  }
+  .footer-note p {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 43.75rem) {
+  header::before {
+    height: 4.125em;
+  }
+  .site-name {
+    font-size: 2em;
+    width: 25rem;
+  }
+  main,
+  footer {
+    max-width: 40em;
+  }
+}
+@media only screen and (min-width: 47.5rem) {
+  main,
+  footer {
+    max-width: 42em;
+  }
+  main {
+    padding: 4em 0;
+  }
+  .episode__title {
+    font-size: 2.25em;
+  }
+  .episode__number {
+    font-size: 1.5em;
+  }
+  .episode__description {
+    margin-top: 1em;
+  }
+  .episode__rating {
+    margin-top: 1em;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  main,
+  footer {
+    max-width: 60em;
+  }
+  main {
+    padding: 6em 0;
+  }
+  .episode__title {
+    font-size: 3em;
+  }
+  .episode__header .wrapper {
+    left: 20.625em;
+  }
+  .episode__description {
+    max-width: 34.375em;
+    margin-top: 2em;
+  }
+  .episode__air-date {
+    margin-top: 1.5em;
+  }
+  .pick-again {
+    font-size: 1.75em;
+    position: fixed;
+    top: 16.0714em;
+    right: 16%;
+  }
+  .pick-again:hover {
+    top: 16.1786em;
+  }
+}
+@media only screen and (min-width: 85.375em) {
+  main,
+  footer {
+    max-width: 70em;
+  }
+  .episode__description {
+    max-width: 50rem;
+  }
+  .pick-again {
+    right: 10%;
+  }
+}
+@media only screen and (min-width: 100em) {
+  main {
+    padding: 8em 0;
+  }
+  .pick-again {
+    right: 14%;
+  }
+}
+@media only screen and (min-width: 120em) {
+  main {
+    padding: 9em 0;
+  }
+  .pick-again {
+    right: 20%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
