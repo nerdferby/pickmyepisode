@@ -1,3 +1,1 @@
-// TODO title not outputted, fix
-
-<?php include("./templates/main.tpl.php") ?>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/templates/main.tpl.php") ?>

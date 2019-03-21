@@ -2,12 +2,9 @@
 <html lang="en" class="no-js">
 <head>
     <?php include("components/site-head.tpl.php") ?>
+    <title>Pick My Episode.</title>
 </head>
 <body>
-
-	<div class="javascript-disabled">
-		<h1>Please enable your JavaScript</h1>
-	</div>
 
 	<header>
 
@@ -25,7 +22,7 @@
 			Pick again
 		</button>
 
-		<script src="/js/pick-episode-script-20190313.min.js"></script>
+		<script src="/js/pick-episode-script.src.js"></script>
 
 	</main>
 

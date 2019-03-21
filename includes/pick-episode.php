@@ -1,27 +1,32 @@
-// TODO convert code from pick-episode-script.src.js and write it in PHP
+<?php
 
-$curl = curl_init();
+function pick_season() {
 
-$pickedSeason = 0;
+	$picked_season = rand(1, 9);
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.themoviedb.org/3/tv/2316/season/" . $pickedSeason . "?language=en-US&api_key=a1163947dd59db1c5cdfb268a90457a4",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => "{}",
-));
+	$curl = curl_init();
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+  curl_setopt_array($curl, array(
+//    CURLOPT_URL => "https://api.themoviedb.org/3/tv/2316/season/" . $picked_season . "?language=en-US&api_key=a1163947dd59db1c5cdfb268a90457a4",
+    CURLOPT_URL => "https://api.themoviedb.org/3/tv/2316/season/" . $picked_season . "?language=en-US&api_key=a1163947dd59db1c5cdfb268a90457a4",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_POSTFIELDS => "{}",
+  ));
 
-curl_close($curl);
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
 
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
+  curl_close($curl);
+
+  echo "<script>console.log(".$response.")</script>";
+
+	return $response;
+
 }
+
+?>

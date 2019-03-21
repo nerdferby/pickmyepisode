@@ -2,6 +2,20 @@ let generateRandomNumber = (max, min) => {
 	return Math.trunc(Math.random() * max) + min;
 };
 
+let checkDescriptionLength = () => {
+
+	if($(".episode__description").height() > 120) {
+		toggleDescription("collapsed");
+		$(".episode__expander").addClass("visible");
+	}
+
+	else {
+		toggleDescription("expanded");
+		$(".episode__expander").removeClass("visible");
+	}
+
+};
+
 let toggleDescription = override => {
 
 	let desc = $(".episode__description");
@@ -33,8 +47,6 @@ let toggleDescription = override => {
 		desc.addClass("expanded");
 		expander.text("Read less");
 	}
-
-	console.log(toggleTo, override);
 
 };
 
@@ -86,17 +98,7 @@ let pickEpisode = () => {
 
 		$(".episode__description").text(pickedEpisode.overview);
 
-		if($(".episode__description").height() > 120) {
-			toggleDescription("collapsed");
-			$(".episode__expander").addClass("visible");
-		}
-
-		else {
-			toggleDescription("expanded");
-			$(".episode__expander").removeClass("visible");
-		}
-
-		// $(".episode__air-date").text(pickedEpisode.air_date);
+		checkDescriptionLength(); // check if the desc needs to be collapsed
 
 		let airDate = new Date(pickedEpisode.air_date);
 		let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -113,10 +115,8 @@ let pickEpisode = () => {
 
 let lastSeasonPicked = 0;
 
-pickEpisode();
+checkDescriptionLength();
 
 $(".pick-again").on("click", pickEpisode);
 
 $(".episode__expander").on("click", toggleDescription);
-
-// TODO add auto-scroller to top of the page when button is clicked

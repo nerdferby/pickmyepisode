@@ -38,18 +38,6 @@ a:active {
   border-bottom-color: @blue
 }
 
-.js .javascript-disabled {
-  display: none
-}
-.javascript-disabled {
-  max-width: 20em;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-60%);
-}
-
 header::before {
   content: "";
   position: absolute;
@@ -79,13 +67,6 @@ header::before {
 }
 .site-name span:last-of-type {
   font-size: 1.5em;
-}
-
-.no-js main {
-  display: none;
-}
-.js main {
-  display: block;
 }
 
 main {
@@ -159,8 +140,14 @@ h1 {
   color: #a7a7a7;
 }
 
-.pick-again {
+.no-js .pick-again {
+  display: none;
+}
+.js .pick-again {
   display: block;
+}
+
+.pick-again {
   background: @pornhub-orange;
   border: 0.2778em solid @pornhub-orange--light;
   border-radius: 1.25em; /* font size + padding */
