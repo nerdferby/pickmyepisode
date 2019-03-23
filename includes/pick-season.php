@@ -1,20 +1,14 @@
 <?php
 
+include("shows.inc");
+
 function pick_season($show_id) {
 
-	$max_num_seasons = 1;
-	$is_valid = false;
+	$show = get_show_info($show_id);
 
-	switch($show_id) {
-		case 2316: // The Office (US)
-			$max_num_seasons = 9;
-			$is_valid = true;
-			break;
-	}
+	if(!!$show) {
 
-	if($is_valid) {
-
-		$picked_season = rand(1, $max_num_seasons);
+		$picked_season = rand(1, $show->number_of_seasons - 1);
 
 		$curl = curl_init();
 

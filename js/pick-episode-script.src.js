@@ -50,6 +50,11 @@ let toggleDescription = override => {
 
 };
 
+let showInfo = {
+	id: $("#show-id").val(),
+	numberOfSeasons: $("#number-of-seasons").val()
+};
+
 let pickEpisode = () => {
 
 	// $(".episode__description").removeClass("collapsed");
@@ -61,7 +66,7 @@ let pickEpisode = () => {
 	let pickedSeason = 0;
 
 	do {
-		pickedSeason = generateRandomNumber(9, 1);
+		pickedSeason = generateRandomNumber(showInfo.numberOfSeasons, 1);
 	}
 	while(lastSeasonPicked === pickedSeason);
 
@@ -70,7 +75,7 @@ let pickEpisode = () => {
 	let settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://api.themoviedb.org/3/tv/2316/season/" + pickedSeason + "?language=en-US&api_key=a1163947dd59db1c5cdfb268a90457a4",
+		"url": "https://api.themoviedb.org/3/tv/"+showInfo.id+"/season/" + pickedSeason + "?language=en-US&api_key=a1163947dd59db1c5cdfb268a90457a4",
 		"method": "GET",
 		"headers": {},
 		"data": "{}"

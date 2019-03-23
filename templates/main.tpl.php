@@ -22,7 +22,14 @@
 			Pick again
 		</button>
 
-		<script src="/js/pick-episode-script.src.js"></script>
+		<?php
+		$show = get_show_info($show_id);
+		?>
+
+		<input type="hidden" id="show-id" value="<?php echo $show_id ?>" />
+		<input type="hidden" id="number-of-seasons" value="<?php echo $show->number_of_seasons ?>" />
+
+		<script src="../js/pick-episode-script.src.js"></script>
 
 	</main>
 
