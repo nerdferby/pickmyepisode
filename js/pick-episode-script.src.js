@@ -55,6 +55,8 @@ let showInfo = {
 	numberOfSeasons: $("#number-of-seasons").val()
 };
 
+// TODO when clicking on another show, call ajax req from same page (don't redirect user)
+
 let pickEpisode = () => {
 
 	// $(".episode__description").removeClass("collapsed");

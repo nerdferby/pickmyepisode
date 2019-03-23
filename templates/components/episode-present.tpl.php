@@ -1,6 +1,6 @@
 <?php
 
-include($_SERVER["DOCUMENT_ROOT"] . "/includes/pick-season.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/includes/pick-season.inc");
 
 $picked_season = json_decode(pick_season($show_id));
 $picked_episode = $picked_season->episodes[rand(0, count($picked_season->episodes) - 1)];
