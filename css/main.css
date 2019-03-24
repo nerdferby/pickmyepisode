@@ -60,7 +60,8 @@ header::before {
 .site-name span:last-of-type {
   font-size: 1.5em;
 }
-main {
+main,
+nav {
   max-width: 20em;
   margin-left: auto;
   margin-right: auto;
@@ -75,6 +76,9 @@ main {
 h1 {
   font-size: 1.875em;
   line-height: 1em;
+}
+h2 {
+  font-size: 1.75em;
 }
 .episode__number {
   font-size: 1.125em;
@@ -161,17 +165,87 @@ h1 {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   border-color: #e8bf8d;
 }
+.nav h2 {
+  margin-bottom: 0.5em;
+}
+.nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  justify-items: stretch;
+  align-items: stretch;
+}
+.nav__item {
+  line-height: 1.5;
+}
 footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   padding: 1em 2.5em;
   text-align: center;
 }
 footer p {
   display: inline-block;
   margin-top: 0.5em;
+}
+@media only screen and (min-width: 25rem) {
+  .nav {
+    margin-bottom: 3em;
+  }
+  .nav h2 {
+    text-align: center;
+  }
+  .nav__item {
+    border-radius: 1.75rem;
+    display: block;
+    height: 13.125em;
+    width: 100%;
+    position: relative;
+    margin: 1em auto;
+    overflow: hidden;
+  }
+  .nav__item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+  }
+  .nav__item--friends {
+    background: transparent url("../img/shows/friends.jpg") center center / cover no-repeat;
+  }
+  .nav__item--how-i-met-your-mother {
+    background: transparent url("../img/shows/how-i-met-your-mother.jpg") center center / cover no-repeat;
+  }
+  .nav__item a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #f7f7f7;
+    border: 7px solid rgba(255, 255, 255, 0.2);
+    border-radius: inherit;
+    z-index: 2;
+  }
+  .show-title {
+    position: absolute;
+    bottom: 0.25em;
+    left: 0.6666em;
+    right: 0.6666em;
+    display: block;
+    text-align: center;
+    font-size: 1.75em;
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: 1.2;
+  }
 }
 @media only screen and (min-width: 40rem) {
   main,
