@@ -43,9 +43,11 @@
 			<?php
 			// TODO style navigation items
 			include($_SERVER["DOCUMENT_ROOT"]."/includes/show-navigation.inc");
-			render_show_navigation_item(2316, $show_id);
-			render_show_navigation_item(1668, $show_id);
-			render_show_navigation_item(1100, $show_id);
+			render_show_navigation_item(2316, $show_id); // the office us
+			render_show_navigation_item(1668, $show_id); // friends
+			render_show_navigation_item(1668, $show_id); // friends
+			render_show_navigation_item(456, $show_id); // the simpsons
+			render_show_navigation_item(1100, $show_id); // himym
 
 			?>
 		</ul>
