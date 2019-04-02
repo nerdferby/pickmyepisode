@@ -83,7 +83,6 @@ header::before {
 main,
 nav,
 footer {
-	.guttered-width();
 	padding: 2.5em 0;
 }
 
@@ -207,8 +206,8 @@ h2 {
 		background: transparent url("/img/down-arrow.svg") top left / contain no-repeat;
 		opacity: 0.2;
 		display: block;
-		width: 60px;
-		height: 36px;
+		width: 48px;
+		height: 28px;
 		margin: 20px auto 28px;
 	}
 }
@@ -269,7 +268,6 @@ footer p {
 
 @media only screen and (min-width: 40rem) {
 
-	// todo updating util class doesn't update css rules that use it, fix
 	.guttered-width {
 		max-width: 34em;
 	}
@@ -293,6 +291,10 @@ footer p {
 
 	.episode__number {
 		margin-top: 0.5em;
+	}
+
+	.nav ul {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
 	footer {
@@ -341,6 +343,11 @@ footer p {
 		margin-bottom: 3em;
 	}
 
+	.nav ul {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	// todo ensure aspect ratio is maintained when guttered-width is increased in breakpoints
 	.nav__item {
 		border-radius: 1.75rem;
 		display: block;
@@ -367,6 +374,7 @@ footer p {
 		}
 	}
 
+	// todo position backgrounds for each show
 	//.nav__item--friends {
 	//	background: transparent url("../img/shows/friends.jpg") 60% center / 122% no-repeat;
 	//}
@@ -406,8 +414,6 @@ footer p {
 		line-height: 1.2;
 	}
 
-
-
 }
 
 @media only screen and (min-width: 47.5rem) {
@@ -436,9 +442,13 @@ footer p {
 		margin-top: 1em;
 	}
 
+	// todo increase size of pick again button for tablets
+
 }
 
 @media only screen and (min-width: 80rem) {
+
+	// todo update nav in breakpoints
 
 	.guttered-width {
 		max-width: 60em;

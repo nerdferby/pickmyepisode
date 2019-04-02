@@ -14,7 +14,7 @@
 
 	</header>
 
-	<main>
+	<main class="guttered-width">
 
 		<?php include("components/episode-present.tpl.php") ?>
 
@@ -33,7 +33,7 @@
 
 	</main>
 
-	<nav class="nav">
+	<nav class="nav guttered-width">
 
 		<h2>
 			Maybe something else?
@@ -54,7 +54,7 @@
 
 	</nav>
 
-	<footer>
+	<footer class="guttered-width">
 		<?php include("components/footer.tpl.php") ?>
 	</footer>
 
